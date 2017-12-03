@@ -1,0 +1,105 @@
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myRegist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="name">用户名</label>
+                    <input type="text" class="form-control" id="username" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">密码</label>
+                    <input type="password" class="form-control" id="psw" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">确认密码</label>
+                    <input type="password" class="form-control" id="psw-repeat" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">邮箱</label>
+                    <input type="text" class="form-control" id="email" placeholder="">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="regist()">注册</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="name">用户名</label>
+                    <input type="text" class="form-control" id="username_l" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="name">密码</label>
+                    <input type="password" class="form-control" id="psw_l" placeholder="">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myJob" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="frm" action="/menu/createJob" method="post" enctype="multipart/form-data" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" name="myModalLabel">公司信息</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="hidden" class="form-control" id="job_id" name="job_id" placeholder="">
+                      <div class="form-group">
+                        <label for="name">公司logo</label>
+                        <input type="file" class="form-control" id="logo" name="logo" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">职位名称</label>
+                        <input type="text" class="form-control" id="job_title" name="job_title" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">公司名称</label>
+                        <input type="text" class="form-control" id="company_name" name="company_name" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">工作经验</label>
+                        <input type="text" class="form-control" id="experience" name="experience" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">职位类型</label>
+                        <input type="text" class="form-control" id="job_type" name="job_type" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">工作地点</label>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="name">薪酬</label>
+                        <input type="text" class="form-control" id="salary" name="salary" placeholder="">
+                      </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveJob()">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>

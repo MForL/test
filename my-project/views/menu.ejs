@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登录页面</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/login.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<style type="text/css">
+		td img {
+			width: 80px;
+		}
+	</style>
+  </head>
+  <body>
+	<%-include("header",{username: username})%>
+	<%-include("modals",{})%>
+	<div class="table-responsive">
+	  <button type="button" class="btn btn-primary" onclick="addJob()">添加</button>
+	  <table class="table">
+	    <caption>响应式表格布局</caption>
+	    <thead>
+	      <tr>
+	        <th>序号</th>
+	        <th>公司logo</th>
+	        <th>职位名称</th>
+	        <th>公司名称</th>
+	        <th>工作经验</th>
+	        <th>职位类型</th>
+	        <th>工作地点</th>
+	        <th>薪资</th>
+	        <th>操作</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <%for (var i=0;i<jobList.length;i++) {%>
+	      <tr>
+	        <td><%=i+1%></td>
+	        <td><img src='<%=jobList[i].logo%>' /></td>
+	        <td><%=jobList[i].job_title%></td>
+	        <td><%=jobList[i].company_name%></td>
+	        <td><%=jobList[i].experience%></td>
+	        <td><%=jobList[i].job_type%></td>
+	        <td><%=jobList[i].location%></td>
+	        <td><%=jobList[i].salary%></td>
+	        <td>
+	        	<button type="button" class="btn btn-primary" onclick="updateJob('<%=jobList[i]._id%>','<%=jobList[i].job_title%>', '<%=jobList[i].company_name%>', '<%=jobList[i].experience%>', '<%=jobList[i].job_type%>', '<%=jobList[i].location%>', '<%=jobList[i].salary%>')">修改</button>
+	        	<button type="button" class="btn btn-primary" onclick="delJob('<%=jobList[i]._id%>')">删除</button>
+	        </td>
+	      </tr>
+	      <%}%>
+	    </tbody>
+	  </table>
+	  <input type="hidden" id="pageNo" value="<%= pageNo%>" />
+	  <button class="btn btn-primary" onclick="prePage()">上一页</button>
+	  <button class="btn btn-primary" onclick="nextPage()">下一页</button>
+	</div>
+
+
+  </body>
+</html>

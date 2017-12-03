@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">管理系统</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">职位管理</a></li>
+            <li>
+            	<% if(username == "") {%>
+            	<a href="#" data-toggle="modal" data-target="#myLogin">登录</a>
+            	<%} else {%>
+            	<a href="#"><%=username%></a>            	
+            	<%}%>
+            </li>
+            <% if(username == "") {%>
+            <li><a href="#" data-toggle="modal" data-target="#myRegist">注册</a></li>
+            <%} else {%>
+            <li><a href="/users/logout" >注销</a></li>
+            <%}%>
+        </ul>
+    </div>
+    </div>
+</nav>
